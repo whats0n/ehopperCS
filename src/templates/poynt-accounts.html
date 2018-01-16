@@ -199,14 +199,14 @@ nav: true
 						    <tr class="editable {% if loop.index % 2 == 0 %}odd{% else %}even{% endif %}" role="row">
 						    	<td class="sorting_1">{{item.enterpriseID or '4812' + loop.index0}}</td>
 						    	<td>{{item.businessID or '18f071cc-5ed4-4b33-80c1-305056d42bfb'}}</td>
-						    	<td>{{item.businessType or 'TEST_MERCHANT'}}</td>
+						    	<td>{{item.businessType or 'MERCHANT'}}</td>
 						    	<td>{{item.industryType or 'Restaurant'}}</td>
-						    	<td>{{item.timeZone or 'America/Los_Angeles'}}</td>
-						    	<td>{{item.processor or 'MOCK'}}</td>
+						    	<td>{{item.timeZone or 'UTC-05:00'}}</td>
+						    	<td>{{item.processor or 'FIRST_DATA'}}</td>
 						    	<td>{{item.legalName or "Lawrence's Last Straw"}}</td>
 						    	<td>{{item.doingName or "Lawrence's Last Straw"}}</td>
 						    	<td>{{item.email or 'lawrence-s-last-straw@gmail.com'}}</td>
-						    	<td>{{item.phone or '2040375'}}</td>
+						    	<td>{{item.phone or '917-921-6467'}}</td>
 						    	<td>{{item.address or 'Palo Alto'}}</td>
 						    </tr>
 						{% endfor %}
