@@ -1,0 +1,344 @@
+---
+title: 'Accounts List'
+view: 'views/accounts/list'
+nav: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="pane-body accounts">
+
+		<div id="accounts-list-loading" data-bind="visible: loading()" style="display: none;"></div>
+		<form id="accounts-list-table-filters" data-bind="event: { submit: filterChange }">
+			<label for="search-by-text">Search:</label>
+			<input id="search-by-text" type="search" aria-controls="accounts-list" data-bind="value: filterValue">
+			<button type="submit" class="btn btn-primary">Find</button>
+		</form>
+		<div id="accounts-list-table" class="datatable-wrapper">
+			<div id="accounts-list_wrapper" class="dataTables_wrapper no-footer">
+				<div id="accounts-list_filter" class="dataTables_filter">
+					<label>Search:<input type="search" class="" placeholder="" aria-controls="accounts-list"></label>
+				</div>
+				<div id="accounts-list_processing" class="dataTables_processing" style="display: none;">Processing...</div>
+				<table class="datatable dataTable no-footer" id="accounts-list" role="grid" aria-describedby="accounts-list_info">
+					<thead>
+						<tr role="row">
+							{% for item in [
+								{
+									title: 'EH Enterprise Id'
+								},
+								{
+									title: 'Poynt Business Id'
+								},
+								{
+									title: 'Business Type'
+								},
+								{
+									title: 'Industry type'
+								},
+								{
+									title: 'Time Zone'
+								},
+								{
+									title: 'Payment Processor'
+								},
+								{
+									title: 'Legal Business Name'
+								},
+								{
+									title: 'Doing Business Name'
+								},
+								{
+									title: 'Email'
+								},
+								{
+									title: 'Phone'
+								},
+								{
+									title: 'Address'
+								}
+							] %}
+								<th class="{% if loop.first %}sorting_desc{% else %}sorting_disabled{% endif %}" {% if item.width %}style="width: {{width}};"{% endif %} aria-label="{{item.title}}">{{item.title}}</th>
+							{% endfor %}
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in [
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							},
+							{
+								enterpriseID: '',
+								businessID: '',
+								businessType: '',
+								industryType: '',
+								timeZone: '',
+								processor: '',
+								legalName: '',
+								doingName: '',
+								email: '',
+								phone: '',
+								address: ''
+							}
+						] %}
+						    <tr class="editable {% if loop.index % 2 == 0 %}odd{% else %}even{% endif %}" role="row">
+						    	<td class="sorting_1">{{item.enterpriseID or '4812' + loop.index0}}</td>
+						    	<td>{{item.businessID or '18f071cc-5ed4-4b33-80c1-305056d42bfb'}}</td>
+						    	<td>{{item.businessType or 'TEST_MERCHANT'}}</td>
+						    	<td>{{item.industryType or 'Restaurant'}}</td>
+						    	<td>{{item.timeZone or 'America/Los_Angeles'}}</td>
+						    	<td>{{item.processor or 'MOCK'}}</td>
+						    	<td>{{item.legalName or "Lawrence's Last Straw"}}</td>
+						    	<td>{{item.doingName or "Lawrence's Last Straw"}}</td>
+						    	<td>{{item.email or 'lawrence-s-last-straw@gmail.com'}}</td>
+						    	<td>{{item.phone or '2040375'}}</td>
+						    	<td>{{item.address or 'Palo Alto'}}</td>
+						    </tr>
+						{% endfor %}
+						{#<tr class="editable odd" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>1345252787</td>
+							<td>!!Companycldv3515</td>
+							<td>United States</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>Legacy</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable even" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>118096752</td>
+							<td>!Company16886</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>New-York</td>
+							<td>10101</td>
+							<td>Essential</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable odd" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>61748557</td>
+							<td>!!Company521929</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>Address74</td>
+							<td>1145</td>
+							<td>Freedom</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable even" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>1610268340</td>
+							<td>!!Company168056</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>Address28</td>
+							<td>1870</td>
+							<td>Legacy</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable odd" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>662361356</td>
+							<td>!!Companyfwdh4632</td>
+							<td>United States</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>Legacy</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable even" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>640019505</td>
+							<td>!!Company065073</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>Address38</td>
+							<td>2887</td>
+							<td>Essential</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable odd" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>1884564262</td>
+							<td>!!Company207355</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>78</td>
+							<td>3898</td>
+							<td>Freedom</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable even" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>2097637318</td>
+							<td>!!Company982943</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>96</td>
+							<td>7757</td>
+							<td>Legacy</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable odd" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>93015567</td>
+							<td>!!Company995560</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>Address34</td>
+							<td>7254</td>
+							<td>Essential</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>
+						<tr class="editable even" data-bind="click: edit, css:{checked: checked()}" role="row">
+							<td>537688214</td>
+							<td>!!Company729652</td>
+							<td>United States</td>
+							<td>NJ</td>
+							<td>Address60</td>
+							<td>9478</td>
+							<td>Legacy</td>
+							<td class="sorting_1">01/11/18</td>
+							<td>Current</td>
+						</tr>#}
+					</tbody>
+				</table>
+				<div class="dataTables_info" id="accounts-list_info" role="status" aria-live="polite">Showing 1 to 10 of 14,816 entriesInfoPostFix</div>
+				<div class="dataTables_paginate paging_simple_numbers" id="accounts-list_paginate">
+					<a class="paginate_button previous disabled" aria-controls="accounts-list" data-dt-idx="0" tabindex="0" id="accounts-list_previous">Previous</a>
+					<span>
+						<a class="paginate_button current" aria-controls="accounts-list" data-dt-idx="1" tabindex="0">1</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="2" tabindex="0">2</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="3" tabindex="0">3</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="4" tabindex="0">4</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="5" tabindex="0">5</a>
+						<span class="ellipsis">…</span>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="6" tabindex="0">1482</a>
+					</span>
+					<a class="paginate_button next" aria-controls="accounts-list" data-dt-idx="7" tabindex="0" id="accounts-list_next">Next</a>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+{% endblock %}

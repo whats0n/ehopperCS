@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Accounts List</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="http://nsqa.b2bsoft.com:8097/favicon.ico?v=0.9.0.0.103493">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/durandal.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/new-app.css"> </head>
+
+  <body>
+    <div id="applicationHost">
+      <div class="main-container" data-view="views/shell" data-active-view="true" style="">
+        <div data-bind="compose:&#39;viewmodels/navigationpanel&#39;">
+          <div class="navigation-panel" data-view="views/navigationpanel" style="display: block;" data-active-view="true">
+            <div class="pane pane-left">
+              <div class="pane-header">
+                <p class="logo" data-bind="click: close"> <span class="fa fa-chevron-left"></span> <span class="enterprise-name" data-bind="text: title, attr: { title: title }" title="eHopper Support">eHopper Support</span> </p>
+              </div>
+              <div class="pane-body">
+                <ul class="main-menu" data-bind="foreach: router.navigationModel">
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#" class="dashboard-icon">Dashboard</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#accounts" class="manage-app-icon">Accounts</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-accounts(/:id)">Edit account</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#accounts" class="manage-app-icon active">Poynt Accounts</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-accounts(/:id)">Edit account</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#store-requests" class="manage-app-icon">Store Requests</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-store-request(/:id)">Store request</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#register-requests" class="manage-app-icon">Register Requests</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-register-request(/:id)">Register request</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#reports" class="reports-icon">Reports</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-customer" class="sync-client-entity-icon">Sync Customer</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-sync-customer(/:id)">Edit Sync Customer</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-transaction" class="sync-client-entity-icon">Sync Transaction</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-sync-transaction(/:id)">Edit Sync Transaction</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-enterprise" class="sync-client-entity-icon">Sync Enterprise</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="content" data-bind="router: { cacheViews: isCachable() }" class="show-content">
+          <div class="pane pane-right" data-view="views/accounts/list" style="" data-active-view="true">
+            <!--ko compose: { model: 'viewmodels/header' }-->
+            <div class="pane-header" data-view="views/header" style="" data-active-view="true">
+              <div class="toggle-options-panel-button" data-bind="click: clickButton">&nbsp;</div> <b><span data-part="navPath" data-bind="text: navigationPath">Accounts List</span></b> </div>
+            <!--/ko-->
+            <div class="pane-body accounts">
+              <div id="accounts-list-loading" data-bind="visible: loading()" style="display: none;"></div>
+              <form id="accounts-list-table-filters" data-bind="event: { submit: filterChange }"> <label for="search-by-text">Search:</label> <input id="search-by-text" type="search" aria-controls="accounts-list" data-bind="value: filterValue"> <button type="submit" class="btn btn-primary">Find</button> </form>
+              <div id="accounts-list-table"
+                class="datatable-wrapper">
+                <div id="accounts-list_wrapper" class="dataTables_wrapper no-footer">
+                  <div id="accounts-list_filter" class="dataTables_filter"> <label>Search:<input type="search" class="" placeholder="" aria-controls="accounts-list"></label> </div>
+                  <div id="accounts-list_processing" class="dataTables_processing" style="display: none;">Processing...</div>
+                  <table class="datatable dataTable no-footer" id="accounts-list" role="grid" aria-describedby="accounts-list_info">
+                    <thead>
+                      <tr role="row">
+                        <th class="sorting_desc" aria-label="EH Enterprise Id">EH Enterprise Id</th>
+                        <th class="sorting_disabled" aria-label="Poynt Business Id">Poynt Business Id</th>
+                        <th class="sorting_disabled" aria-label="Business Type">Business Type</th>
+                        <th class="sorting_disabled" aria-label="Industry type">Industry type</th>
+                        <th class="sorting_disabled" aria-label="Time Zone">Time Zone</th>
+                        <th class="sorting_disabled" aria-label="Payment Processor">Payment Processor</th>
+                        <th class="sorting_disabled" aria-label="Legal Business Name">Legal Business Name</th>
+                        <th class="sorting_disabled" aria-label="Doing Business Name">Doing Business Name</th>
+                        <th class="sorting_disabled" aria-label="Email">Email</th>
+                        <th class="sorting_disabled" aria-label="Phone">Phone</th>
+                        <th class="sorting_disabled" aria-label="Address">Address</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="editable even" role="row">
+                        <td class="sorting_1">48120</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable odd" role="row">
+                        <td class="sorting_1">48121</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable even" role="row">
+                        <td class="sorting_1">48122</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable odd" role="row">
+                        <td class="sorting_1">48123</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable even" role="row">
+                        <td class="sorting_1">48124</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable odd" role="row">
+                        <td class="sorting_1">48125</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable even" role="row">
+                        <td class="sorting_1">48126</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable odd" role="row">
+                        <td class="sorting_1">48127</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable even" role="row">
+                        <td class="sorting_1">48128</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                      <tr class="editable odd" role="row">
+                        <td class="sorting_1">48129</td>
+                        <td>18f071cc-5ed4-4b33-80c1-305056d42bfb</td>
+                        <td>TEST_MERCHANT</td>
+                        <td>Restaurant</td>
+                        <td>America/Los_Angeles</td>
+                        <td>MOCK</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>Lawrence&#39;s Last Straw</td>
+                        <td>lawrence-s-last-straw@gmail.com</td>
+                        <td>2040375</td>
+                        <td>Palo Alto</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="dataTables_info" id="accounts-list_info" role="status" aria-live="polite">Showing 1 to 10 of 14,816 entriesInfoPostFix</div>
+                  <div class="dataTables_paginate paging_simple_numbers" id="accounts-list_paginate"> <a class="paginate_button previous disabled" aria-controls="accounts-list" data-dt-idx="0" tabindex="0" id="accounts-list_previous">Previous</a> <span>
+						<a class="paginate_button current" aria-controls="accounts-list" data-dt-idx="1" tabindex="0">1</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="2" tabindex="0">2</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="3" tabindex="0">3</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="4" tabindex="0">4</a>
+						<a class="paginate_button " aria-controls="accounts-list" data-dt-idx="5" tabindex="0">5</a>
+						<span class="ellipsis">…</span> <a class="paginate_button " aria-controls="accounts-list" data-dt-idx="6" tabindex="0">1482</a> </span> <a class="paginate_button next" aria-controls="accounts-list" data-dt-idx="7" tabindex="0" id="accounts-list_next">Next</a>                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>

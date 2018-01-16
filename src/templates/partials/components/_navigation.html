@@ -1,0 +1,117 @@
+<div data-bind="compose:&#39;viewmodels/navigationpanel&#39;">
+	<div class="navigation-panel" data-view="views/navigationpanel" style="display: block;" data-active-view="true">
+
+		<div class="pane pane-left">
+			<div class="pane-header">
+				<p class="logo" data-bind="click: close">
+					<span class="fa fa-chevron-left"></span>
+					<span class="enterprise-name" data-bind="text: title, attr: { title: title }" title="eHopper Support">eHopper Support</span>
+				</p>
+			</div>
+
+			<div class="pane-body">
+				<ul class="main-menu" data-bind="foreach: router.navigationModel">
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#" class="dashboard-icon">Dashboard</a>
+						<!-- ko if: $data.childRoutes !== undefined  --><!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#accounts" class="manage-app-icon">Accounts</a>
+						<!-- ko if: $data.childRoutes !== undefined  -->
+						<ul data-bind="foreach: $data.childRoutes.routes">
+							<li data-bind="visible: nav, permission: $data.permission" style="display: none;">
+								<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-accounts(/:id)">Edit account</a>
+							</li>
+						</ul>
+						<!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#accounts" class="manage-app-icon active">Poynt Accounts</a>
+						<!-- ko if: $data.childRoutes !== undefined  -->
+						<ul data-bind="foreach: $data.childRoutes.routes">
+							<li data-bind="visible: nav, permission: $data.permission" style="display: none;">
+								<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-accounts(/:id)">Edit account</a>
+							</li>
+						</ul>
+						<!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#store-requests" class="manage-app-icon">Store Requests</a>
+						<!-- ko if: $data.childRoutes !== undefined  -->
+						<ul data-bind="foreach: $data.childRoutes.routes">
+							<li data-bind="visible: nav, permission: $data.permission" style="display: none;">
+								<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-store-request(/:id)">Store request</a>
+							</li>
+						</ul>
+						<!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#register-requests" class="manage-app-icon">Register Requests</a>
+						<!-- ko if: $data.childRoutes !== undefined  -->
+						<ul data-bind="foreach: $data.childRoutes.routes">
+							<li data-bind="visible: nav, permission: $data.permission" style="display: none;">
+								<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-register-request(/:id)">Register request</a>
+							</li>
+						</ul>
+						<!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#reports" class="reports-icon">Reports</a>
+						<!-- ko if: $data.childRoutes !== undefined  --><!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-customer" class="sync-client-entity-icon">Sync Customer</a>
+						<!-- ko if: $data.childRoutes !== undefined  -->
+						<ul data-bind="foreach: $data.childRoutes.routes">
+							<li data-bind="visible: nav, permission: $data.permission" style="display: none;">
+								<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-sync-customer(/:id)">Edit Sync Customer</a>
+							</li>
+						</ul>
+						<!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-transaction" class="sync-client-entity-icon">Sync Transaction</a>
+						<!-- ko if: $data.childRoutes !== undefined  -->
+						<ul data-bind="foreach: $data.childRoutes.routes">
+							<li data-bind="visible: nav, permission: $data.permission" style="display: none;">
+								<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-sync-transaction(/:id)">Edit Sync Transaction</a>
+							</li>
+						</ul>
+						<!-- /ko -->
+					</li>
+					<!-- /ko -->
+				
+					<!-- ko if: $data.parent === undefined  -->
+					<li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class="">
+						<a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-enterprise" class="sync-client-entity-icon">Sync Enterprise</a>
+						<!-- ko if: $data.childRoutes !== undefined  --><!-- /ko -->
+					</li>
+					<!-- /ko -->
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>

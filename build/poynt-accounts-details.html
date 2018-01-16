@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Accounts List</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="http://nsqa.b2bsoft.com:8097/favicon.ico?v=0.9.0.0.103493">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/durandal.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/new-app.css"> </head>
+
+  <body>
+    <div id="applicationHost">
+      <div class="main-container" data-view="views/shell" data-active-view="true" style="">
+        <div data-bind="compose:&#39;viewmodels/navigationpanel&#39;">
+          <div class="navigation-panel" data-view="views/navigationpanel" style="display: block;" data-active-view="true">
+            <div class="pane pane-left">
+              <div class="pane-header">
+                <p class="logo" data-bind="click: close"> <span class="fa fa-chevron-left"></span> <span class="enterprise-name" data-bind="text: title, attr: { title: title }" title="eHopper Support">eHopper Support</span> </p>
+              </div>
+              <div class="pane-body">
+                <ul class="main-menu" data-bind="foreach: router.navigationModel">
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#" class="dashboard-icon">Dashboard</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#accounts" class="manage-app-icon">Accounts</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-accounts(/:id)">Edit account</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#accounts" class="manage-app-icon active">Poynt Accounts</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-accounts(/:id)">Edit account</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#store-requests" class="manage-app-icon">Store Requests</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-store-request(/:id)">Store request</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#register-requests" class="manage-app-icon">Register Requests</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-register-request(/:id)">Register request</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#reports" class="reports-icon">Reports</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-customer" class="sync-client-entity-icon">Sync Customer</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-sync-customer(/:id)">Edit Sync Customer</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-transaction" class="sync-client-entity-icon">Sync Transaction</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <ul data-bind="foreach: $data.childRoutes.routes">
+                      <li data-bind="visible: nav, permission: $data.permission" style="display: none;"> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#edit-sync-transaction(/:id)">Edit Sync Transaction</a> </li>
+                    </ul>
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.parent === undefined  -->
+                  <li data-bind="visible: nav, css: { hasSubitems: $data.childRoutes !== undefined &amp;&amp; !$data.noSubItems }, permission: $data.permission" class=""> <a data-bind="attr: { href: hash }, text: $root.itemLabel($data), css: iconClass, click: $root.selectMenu" href="http://nsqa.b2bsoft.com:8097/#sync-enterprise" class="sync-client-entity-icon">Sync Enterprise</a>
+                    <!-- ko if: $data.childRoutes !== undefined  -->
+                    <!-- /ko -->
+                  </li>
+                  <!-- /ko -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="content" data-bind="router: { cacheViews: isCachable() }" class="show-content">
+          <div class="pane pane-right" data-view="views/accounts/list" style="" data-active-view="true">
+            <!--ko compose: { model: 'viewmodels/header' }-->
+            <div class="pane-header" data-view="views/header" style="" data-active-view="true">
+              <div class="toggle-options-panel-button" data-bind="click: clickButton">&nbsp;</div> <b><span data-part="navPath" data-bind="text: navigationPath">Accounts List</span></b> </div>
+            <!--/ko-->
+            <div class="pane-body accounts">
+              <div id="accounts-list-loading" data-bind="visible: loading()" style="display: none;"></div>
+              <div id="accounts-list-form">
+                <div class="container">
+                  <h2>Account details - <span data-bind="text: enterpriseName()">12345</span></h2>
+                  <div class="form-group alert-danger"> <span data-bind="text: error"></span> </div>
+                  <div class="form-group"> <input type="button" class="btn btn-primary" data-bind="click: cancelEdit" value="Cancel"> <button class="btn btn-success" data-bind="click: saveEdit, enable: canEdit">Save</button> </div>
+                  <table class="account-details-table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="form-group"> <label for="enterprise-name">Enterprise name</label> <input type="text" class="form-control" id="enterprise-name" data-bind="value: enterpriseName, enable: canEdit() &amp;&amp; !wirelessModeEnabled()"> </div>
+                          <div class="form-group">
+                          <label for="first-name">First name</label> <input type="text" class="form-control" id="first-name" data-bind="value: firstName" disabled="disabled"> </div>
+                          <div class="form-group"> <label for="last-name">Last name</label> <input type="text" class="form-control" id="last-name" data-bind="value: lastName" disabled="disabled"> </div>
+                          <div class="form-group"> <label for="email">Email</label> <input type="text" class="form-control" id="email" data-bind="value: email, enable: canEdit() &amp;&amp; !wirelessModeEnabled()"><span class="fieldError" style="display: none;"></span> </div>
+                          <div class="form-group"> <label for="phone">Phone</label> <input type="text" class="form-control" id="phone" data-bind="value: phone, enable: canEdit() &amp;&amp; !wirelessModeEnabled()"><span class="fieldError" style="display: none;"></span> </div>
+                          <div class="form-group"> <label for="country">Country</label> <select class="form-control" id="country" data-bind="
+										options: countries,
+										optionsText: 'name',
+										optionsValue: 'id',
+										value: country,
+										enable: canEdit()  &amp;&amp; !wirelessModeEnabled()"><option value="">-- N/A --</option><option value="AF">Afghanistan</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian O. Terr.</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei Darussalam</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="KY">Cayman Islands</option><option value="CF">Central African Rep.</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo (Brazzaville)</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR">Croatia</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="CD">Democratic Republic of Congo</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="XC">East Caribbean</option><option value="TP">East Timor</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="EU">European Union</option><option value="FK">Falkland Islands (Malvinas)</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Terr.</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland (Denmark)</option><option value="GD">Grenada</option><option value="GP">Guadaloupe</option><option value="GU">Guam (US)</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea (Conakry)</option><option value="GW">Guinea Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard and McDonald Isl.</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="CI">Ivory Coast</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KR">Korea (South)</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macau</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestine</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="SH">Saint Helena</option><option value="LC">Saint Lucia</option><option value="PM">Saint Pierre and Miquelon</option><option value="SM">San Marino</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SX">Sint Maarten (Dutch part)</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="SS">South Sudan</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="ST">St. Tome and Principe</option><option value="KN">St.Kitts Nevis Anguilla</option><option value="VC">St.Vincent and Grenadines</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen Is</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UY">Uruguay</option><option value="UM">US Minor outlying Isl.</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican City State</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="VI">Virgin Islands, U.S.</option><option value="WF">Wallis and Futuna Islands</option><option value="EH">Western Sahara</option><option value="WS">Western Samoa</option><option value="YE">Yemen</option><option value="YU">Yugoslavia</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option>
+									</select><span class="fieldError" style="display: none;"></span> </div>
+                          <div class="form-group"> <label for="state">State</label> <input type="text" class="form-control" id="state" data-bind="value: state, enable: canEdit() &amp;&amp; !wirelessModeEnabled()"><span class="fieldError" style="display: none;"></span> </div>
+                          <div class="form-group"> <label for="city">City</label> <input type="text" class="form-control" id="city" data-bind="value: city, enable: canEdit() &amp;&amp; !wirelessModeEnabled()"><span class="fieldError" style="display: none;"></span> </div>
+                          <div
+                            class="form-group"> <label for="zip">Zip</label> <input type="text" class="form-control" id="zip" data-bind="value: zip, enable: canEdit() &amp;&amp; !wirelessModeEnabled()"><span class="fieldError" style="display: none;"></span> </div>
+                <div class="form-group">
+                <label for="business">Business</label> <input class="form-control" id="business" data-bind="value: business, enable: canEdit() &amp;&amp; !wirelessModeEnabled()"> </div>
+                <div class="form-group"> <label for="plan">Plan</label> <select class="form-control" id="plan" data-bind="
+										options: planCodes,
+										optionsText: 'name',
+										optionsValue: 'code',
+										value: plan,
+										enable: canEdit"><option value="0">Unknown</option><option value="1">Essential</option><option value="2">Freedom</option><option value="3">Legacy</option><option value="4">Essential-A1</option>
+									</select> </div>
+                <div class="form-group"> <label for="merchantType">Merchant Type</label> <select class="form-control" id="merchantType" data-bind="
+											options: merchantTypes,
+											optionsText: 'name',
+											optionsValue: 'value',
+											value: merchantType,
+											enable: canEdit"><option value="0">Non Wireless Standard Mode</option><option value="1">Wireless Standard Mode</option></select> </div>
+                <div class="form-group"> <label for="upgradeTo">Version</label> <select class="form-control" id="upgradeTo" data-bind="options: upgradeVersions,
+											optionsText: 'name',
+											value: upgradeVersion,
+											enable: false" disabled=""><option value="">Current</option>
+									</select> </div>
+                <div class="form-group"> <button class="btn btn-primary" data-bind="enable: canEdit() &amp;&amp; !wirelessModeEnabled(), click: addStore, local: 'accountEdit.addStore'">Add Store</button> </div>
+                <div class="form-group form-inline" data-bind="visible: canEdit">
+                  <div class="stores-container" data-bind="foreach: stores">
+                    <div class="store"> <span class="store-name" data-bind="text: $data.name">12345</span>
+                      <!-- ko if: $data.isActive --><button class="btn btn-primary" data-bind="enable: !$root.wirelessModeEnabled(), click: $root.disableStore.bind($data), local: 'accountEdit.disableStore'">Disable Store</button>
+                      <!-- /ko -->
+                      <!-- ko if: !$data.isActive -->
+                      <!-- /ko --><button class="btn btn-primary" data-bind="enable: !$root.wirelessModeEnabled(), click: $root.addToStore.bind($data), local: 'accountEdit.addRegister'">Add Register</button> </div>
+                    <div class="store-registers" data-bind="foreach: $data.registers">
+                      <div class="register"> <span class="register-name" data-bind="text: $data.name">Register 1</span>
+                        <!-- ko if: $data.isActive --><button class="btn btn-primary" data-bind="click: $root.disableRegister.bind($data), local: 'accountEdit.disableRegister'">Disable Register</button>
+                        <!-- /ko -->
+                        <!-- ko if: !$data.isActive -->
+                        <!-- /ko -->
+                      </div>
+                    </div>
+                  </div>
+                  <!--
+									<table class="stores-table">
+										<tbody data-bind="foreach: stores">
+											<tr>
+												<td class="store-names">
+													<span class="store-name" data-bind="text: $data.name"></span>
+												</td>
+												<td class="store-function-buttons">
+													<button class="btn btn-primary" data-bind="click: $root.addToStore.bind($data)">Add Register</button>
+													<button class="btn btn-success" data-bind="click: $root.enableStore.bind($data)">Enable</button>
+													<button class="btn btn-primary" data-bind="click: $root.disableStore.bind($data)">Disable</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									-->
+                </div>
+                <!--
+								<div class="form-group form-inline">
+									<label for="add-to-store">Add register to store</label>
+									<select data-bind="options: stores, optionsText: 'name', optionsValue: 'id', value: selectedStore, enable: canEdit"
+											class="form-control" id="add-to-store">
+									</select>
+									<button class="btn btn-primary" data-bind="enable: canEdit, click: addToStore">Add</button>
+								</div>
+								-->
+                <div class="form-group form-inline unblock-fn"> <button class="btn btn-primary" data-bind="click: unblockAccount, enable: canEdit, css: { loadingInProgress: loadingUnblockSmall() }">Unblock Back Office</button>
+                  <p class="bg-success" data-bind="visible: unblockSuccess" style="display: none;">Account BO has successfully unblocked.</p>
+                  <p class="bg-danger" data-bind="visible: unblockFailed" style="display: none;">Unblock failed.</p>
+                </div>
+                <div class="form-group form-inline upgrade-fn"> <button class="btn btn-primary" data-bind="visible: upgradeEnabled(), click: upgradeAccount, css: { loadingInProgress: loadingUpgradeSmall() }" style="display: none;">Upgrade account</button>
+                  <p class="alert alert-success" data-bind="visible: upgradeSuccess"
+                    style="display: none;">Account is successfully upgraded.</p>
+                  <p class="alert alert-danger" data-bind="visible: upgradeFailed" style="display: none;">Upgrade failed.</p>
+                </div>
+                <div class="form-group"> <input type="button" class="btn btn-primary" data-bind="click: cancelEdit" value="Cancel"> <button class="btn btn-success" data-bind="click: saveEdit, enable: canEdit">Save</button> </div>
+                </td>
+                <td data-bind="with: enterpriseObject">
+                  <div class="form-group"> <label>Onboarding Date:</label> <span data-bind="text: onboardingDate">01/16/18</span> </div>
+                  <div class="form-group"> <label>Number of Stores:</label> <span data-bind="text: numberOfStores">1</span> </div>
+                  <div class="form-group"> <label>Number of Registers:</label> <span data-bind="text: numberOfRegisters">1</span> </div>
+                  <div class="form-group"> <label>Active number of Registers:</label> <span data-bind="text: activeNumberOfRegisters">1</span> </div>
+                  <div class="form-group"> <label>Marketing and Loyalty:</label> <span data-bind="text: marketingAndLoyalty">Not installed</span> </div>
+                  <div class="form-group"> <label>Update order on any Register:</label> <span data-bind="text: updateOrderOnAnyRegister">Not installed</span> </div>
+                  <div class="form-group"> <label>Time clock:</label> <span data-bind="text: timeClock">Not installed</span> </div>
+                  <div class="form-group"> <label>Control Number:</label> <span data-bind="text: controlNumber">Not installed</span> </div>
+                  <div class="form-group"> <label>PayProc USA ePay:</label> <span data-bind="text: payProcUSAePay">1</span> </div>
+                  <div class="form-group"> <label>PayProc Pax:</label> <span data-bind="text: payProcPax">0</span> </div>
+                  <div class="form-group"> <label>PayProc Poynt:</label> <span data-bind="text: payProcPoynt">0</span> </div>
+                  <div class="form-group"> <label>Last transaction:</label> <span data-bind="text: lastTransaction">01/01/00 2:00:00 AM</span> </div>
+                  <div class="form-group"> <label>Cash MTD:</label> <span data-bind="text: cashMTD">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Cash Daily:</label> <span data-bind="text: cashDaily">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Credit Card MTD:</label> <span data-bind="text: creditCardMTD">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Credit Card Daily:</label> <span data-bind="text: creditCardDaily">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Debit Card MTD:</label> <span data-bind="text: debitCardMTD">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Debit Card Daily:</label> <span data-bind="text: debitCardDaily">$ 0.00</span> </div>
+                  <div class="form-group"> <label>External Payment MTD:</label> <span data-bind="text: externalPaymentMTD">$ 0.00</span> </div>
+                  <div class="form-group"> <label>External Payment Daily:</label> <span data-bind="text: externalPaymentDaily">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Transactions MTD:</label> <span data-bind="text: transactionsMTD">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Transactions Daily:</label> <span data-bind="text: transactionsDaily">$ 0.00</span> </div>
+                  <div class="form-group"> <label>Total transactions:</label> <span data-bind="text: totalTransactions">0</span> </div>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      </div>
+      </section>
+    </div>
+    </div>
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>
