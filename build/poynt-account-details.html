@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Accounts List</title>
+    <title>Edit Poynt Account</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
@@ -108,13 +108,13 @@
           <div class="pane pane-right" data-view="views/accounts/list" style="" data-active-view="true">
             <!--ko compose: { model: 'viewmodels/header' }-->
             <div class="pane-header" data-view="views/header" style="" data-active-view="true">
-              <div class="toggle-options-panel-button" data-bind="click: clickButton">&nbsp;</div> <b><span data-part="navPath" data-bind="text: navigationPath">Accounts List</span></b> </div>
+              <div class="toggle-options-panel-button" data-bind="click: clickButton">&nbsp;</div> <b><span data-part="navPath" data-bind="text: navigationPath">Edit Poynt Account</span></b> </div>
             <!--/ko-->
             <div class="pane-body accounts">
               <div id="accounts-list-loading" data-bind="visible: loading()" style="display: none;"></div>
               <div id="accounts-list-form">
                 <div class="container">
-                  <h2>Account details - <span data-bind="text: enterpriseName()">12345</span></h2>
+                  <h2>Account details - <span>Lawrence's Last Straw</span></h2>
                   <div class="form-group alert-danger"> <span data-bind="text: error"></span> </div>
                   <div class="form-group"> <input type="button" class="btn btn-primary" value="back"> </div>
                   <table class="account-details-table">
